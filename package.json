@@ -1,0 +1,90 @@
+{
+  "name": "mdcu-genetical-grouping",
+  "description": "Application for generate evenly grouping by genetic algorithm, designed for MDCU students grouping.",
+  "version": "1.0.0",
+  "author": "Champ <varis_champ@hotmail.com>",
+  "license": "MIT",
+  "main": "./dist/src/main/electron.js",
+  "scripts": {
+    "tsc": "tsc -w",
+    "start": "concurrently \"yarn parcel\" \"yarn electron\"",
+    "serve": "parcel serve ./public_DEV/index.html --public-url ./ --hmr-port 1172",
+    "parcel-build": "parcel build ./public/index.html --public-url ./ ",
+    "dev": "cross-env NODE_ENV=development electron ./dist/src/main/electron.js",
+    "prod": "cross-env NODE_ENV=production electron ./dist/src/main/electron.js",
+    "package": "cross-env NODE_ENV=production && yarn parcel-build && tsc --build --verbose && electron-builder",
+    "deploy": "yarn package --publish always",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "targets": {
+    "main": false
+  },
+  "repository": "https://github.com/champ8644/MDCU-genetical-grouping-releases",
+  "build": {
+    "productName": "MDCU Genetical Grouping",
+    "appId": "mdcu-genetical-grouping",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "directories": {
+      "buildResources": "assets",
+      "output": "build"
+    },
+    "files": [
+      "dist"
+    ]
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@types/debug": "^4.1.7",
+    "@types/lodash": "^4.14.178",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "concurrently": "^6.5.1",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-reloader": "^1.2.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-native": "^4.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-react-native": "^0.2.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "parcel": "^2.0.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@blueprintjs/core": "^3.52.0",
+    "@blueprintjs/icons": "^3.31.0",
+    "@blueprintjs/popover2": "^0.12.9",
+    "@blueprintjs/select": "^3.18.11",
+    "@electron/remote": "^2.0.1",
+    "@reduxjs/toolkit": "^1.7.1",
+    "classnames": "^2.3.1",
+    "cptable-fixed-xlsx-style": "^0.8.20",
+    "electron-log": "^4.4.3",
+    "electron-updater": "^4.6.1",
+    "geneticalgorithm": "^1.0.2",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "simple-statistics": "^7.7.0",
+    "xlsx": "^0.17.4"
+  }
+}

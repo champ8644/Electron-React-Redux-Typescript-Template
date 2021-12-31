@@ -1,0 +1,67 @@
+{
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.killAllTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        {
+          "command": "workbench.action.terminal.kill"
+        }
+      ]
+    },
+    {
+      "command": "multiCommand.runInFirstTerminal",
+      "sequence": [
+        "workbench.action.terminal.new",
+        {
+          "command": "workbench.action.terminal.renameWithArg",
+          "args": {
+            "name": "tsc"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "yarn tsc\u000D"
+          }
+        }
+      ]
+    },
+    {
+      "command": "multiCommand.runInSecondTerminal",
+      "sequence": [
+        "workbench.action.terminal.splitInActiveWorkspace",
+        {
+          "command": "workbench.action.terminal.renameWithArg",
+          "args": {
+            "name": "Server"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "yarn serve\u000D"
+          }
+        }
+      ]
+    },
+    {
+      "command": "multiCommand.runInThirdTerminal",
+      "sequence": [
+        "workbench.action.terminal.splitInActiveWorkspace",
+        {
+          "command": "workbench.action.terminal.renameWithArg",
+          "args": {
+            "name": "Electron"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "yarn dev\u000D"
+          }
+        }
+      ]
+    }
+  ]
+}
