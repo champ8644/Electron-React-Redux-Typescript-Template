@@ -1,6 +1,6 @@
 {
-  "name": "mdcu-genetical-grouping",
-  "description": "Application for generate evenly grouping by genetic algorithm, designed for MDCU students grouping.",
+  "name": "electron-react-redux-typescript-template",
+  "description": "Template for Electron + React + Redux + Typescript.",
   "version": "1.0.0",
   "author": "Champ <varis_champ@hotmail.com>",
   "license": "MIT",
@@ -19,10 +19,10 @@
   "targets": {
     "main": false
   },
-  "repository": "https://github.com/champ8644/MDCU-genetical-grouping-releases",
+  "repository": "https://github.com/champ8644/Electron-React-Redux-Typescript-Template",
   "build": {
-    "productName": "MDCU Genetical Grouping",
-    "appId": "mdcu-genetical-grouping",
+    "productName": "Electron React Redux Typescript",
+    "appId": "electron-react-redux-typescript",
     "win": {
       "target": "nsis",
       "icon": "assets/icons/win/icon.ico"
